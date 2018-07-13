@@ -137,12 +137,12 @@ namespace ByteBank.Modelos
                 return -1;
             }
 
-            if(Numero < outraConta.Numero)
+            if(Saldo < outraConta.Saldo)
             {
                 return -1;
             }
 
-            if (Numero == outraConta.Numero)
+            if (Saldo == outraConta.Saldo)
             {
                 return 0;
             }

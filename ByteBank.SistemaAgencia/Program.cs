@@ -16,19 +16,22 @@ namespace ByteBank.SistemaAgencia
         {
             var contas = new List<ContaCorrente>()
             {
-                new ContaCorrente(341, 57480),
-                new ContaCorrente(342, 45678),
-                new ContaCorrente(340, 1),
-                new ContaCorrente(340, 99999),
-                new ContaCorrente(340, 48950),
-                new ContaCorrente(290, 18950)
+                new ContaCorrente(341, 1),
+                new ContaCorrente(342, 999),
+                new ContaCorrente(340, 4),
+                new ContaCorrente(340, 456),
+                new ContaCorrente(340, 10),
+                new ContaCorrente(290, 123)
             };
 
             // contas.Sort(); ~~> Chamar a implementação dada em IComparable
 
-            contas.Sort(new ComparadorContaCorrentePorAgencia());
+            // contas.Sort(new ComparadorContaCorrentePorAgencia());
 
-            foreach (var conta in contas)
+            IOrderedEnumerable<ContaCorrente> contasOrdenadas =
+                contas.OrderBy(conta => conta.Numero);
+
+            foreach (var conta in contasOrdenadas)
             {
                 Console.WriteLine($"Conta número {conta.Numero}, ag. {conta.Agencia}");
             }

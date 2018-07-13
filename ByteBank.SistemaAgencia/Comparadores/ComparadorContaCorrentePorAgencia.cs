@@ -25,7 +25,7 @@ namespace ByteBank.SistemaAgencia.Comparadores
             {
                 return -1;
             }
-
+            
             if (x.Agencia < y.Agencia)
             {
                 return -1; // X fica na frente de Y
